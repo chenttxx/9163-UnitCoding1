@@ -1,6 +1,6 @@
 #include <stdlib.h>
 
-int main(void) {
+int spell(void) {
 
     return 0;
 }

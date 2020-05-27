@@ -1,3 +1,5 @@
 language: c
 compiler: gcc
+before_install:
+- brew install check
 script: make && make test

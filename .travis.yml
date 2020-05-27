@@ -1,14 +1,5 @@
 language: c
 compiler: gcc
 script:
-    - mkdir check; cd check
-    - git clone https://github.com/libcheck/check
-    - cd check
-    - autoreconf --install
-    - ./configure
-    - make
-    - make check
-    - make install
-    - sudo ldconfig
-    - cd ..
+    - sudo apt-get install check
     - make && make test

@@ -1,6 +1,12 @@
 language: c
 compiler: gcc
-os: osx
-before_install:
-- brew install check
-script: make && make test
+script:
+    - mkdir check; cd check
+    - git clone https://github.com/libcheck/check
+    - autoreconf --install
+    - ./configure
+    - make
+    - make check
+    - make install
+    - sudo ldconfig
+    - make && make test

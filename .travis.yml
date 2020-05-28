@@ -3,4 +3,4 @@ compiler: gcc
 script:
     - sudo apt-get install check
     - sudo apt-get install build-essential
-    - make 
+    - make && make test

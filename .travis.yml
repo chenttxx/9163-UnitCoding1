@@ -1,5 +1,6 @@
 language: c
 compiler: gcc
 script:
-    - make get-deps
+    - sudo apt-get install check
+    - sudo apt-get install build-essential
     - make 

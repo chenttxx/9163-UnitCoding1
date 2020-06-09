@@ -2,4 +2,5 @@ spell_check
 *.o
 *.gch
 *.old
-
+logs
+logs/*

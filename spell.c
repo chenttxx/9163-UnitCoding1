@@ -113,7 +113,7 @@ bool load_dictionary(const char* dictionary_file, hashmap_t hashtable[]){
     }
 
     free(line);
-    free(newNode)
+    
     fclose(fp);
     return true;
 
@@ -216,7 +216,7 @@ int check_words(FILE* fp, hashmap_t hashtable[], char* misspelled[]) {
             }
         }
     }
-    free(tem);
+    
     free(word);
     free(string);
     return num_misspelled;

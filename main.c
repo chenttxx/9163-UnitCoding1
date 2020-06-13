@@ -53,7 +53,11 @@ int main(int argc, char* argv[])
        printf("misspelled: %s\n", misspelled[i]);
     }
     printf("Mispelled: %d\n", num_misspelled);
-    free(hashtable);
+    for(int d = 0; d < HASH_SIZE; d++){
+        if(hashtable[d] != NULL){
+            free(hashtable[d]);
+        }
+    }
     fclose(fp);
 
     cleanup_mem(hashtable, misspelled);

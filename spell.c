@@ -30,15 +30,14 @@
  *  bool correct  = check_word(word, hashtable);
  **/
 bool check_word(const char* word, hashmap_t hashtable[]) {
-    printf("%s\n", word);
  
     int hash_val = 0;
     //int charLength = strlen(word);
 
     hash_val = hash_function(word);
-    printf("hash value is %d\n", hash_val);
+    //printf("hash value is %d\n", hash_val);
     hashmap_t new_node = hashtable[hash_val];
-    printf("word is %s\n", new_node->word);
+    //printf("word is %s\n", new_node->word);
     while (new_node != NULL) {
         if (strcmp(new_node->word, word) == 0) {
             return true;

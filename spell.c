@@ -41,10 +41,22 @@ bool check_word(const char* word, hashmap_t hashtable[]) {
     //printf("word is %s\n", new_node->word);
     while (new_node != NULL) {
         if (strcmp(new_node->word, word) == 0) {
+            while(new_node != NULL){
+                hashmap_t tempoaray;
+                temporary = new_node;
+                new_node = new_node->next;
+                free(temporary);
+            }
             return true;
         } else {
             new_node = new_node->next;
         }
+    }
+    while(new_node != NULL){
+            hashmap_t tempoaray;
+            temporary = new_node;
+            new_node = new_node->next;
+            free(temporary);
     }
     return false;
 }

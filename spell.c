@@ -75,8 +75,8 @@ bool load_dictionary(const char* dictionary_file, hashmap_t hashtable[]){
     size_t length = 0;
     ssize_t nextWordSize = -1;
     int hashValue = 0;
-int count = 0;
-int count2 = 0;
+    //int count = 0;
+    //int count2 = 0;
 
 
     for(int t = 0; t< HASH_SIZE; t++){
@@ -120,15 +120,13 @@ int count2 = 0;
 
        }
     }
-int count3 = 0;
-for(int s = 0; s <HASH_SIZE; s++){
-    if(hashtable[s]== NULL){
-        count3++;
-}
-}
-    printf("Missed hashed words is %d\n", count);
-    printf("Hashed words is %d\n", count2);
-    printf("Null positions is %d\n", count3);
+    hashmap_t temporary;
+    while(newNode != NULL){
+        temporary = newNode;
+        newNode = newNode->next;
+        free(temporary);
+    }
+
     free(line);
     fclose(fp);
     return true;
@@ -222,8 +220,6 @@ int check_words(FILE* fp, hashmap_t hashtable[], char* misspelled[]) {
                 }
             }
 
-printf("The digitNum of %s is %d\n", word, digitNum);
-printf("The number of dot is %d\n", dot);
             //tem is numeric then it is considered spelled correctly
             //even if it is not in the hashtable
             if (digitNum == strlen(word) || (digitNum == (strlen(word)-1) && dot == 1)) {
@@ -243,6 +239,7 @@ printf("The number of dot is %d\n", dot);
             }
         }
     }
+    free(tem);
     free(word);
     return num_misspelled;
 }

@@ -1,0 +1,1 @@
+This is a test file for homework. The assignment taek words as input and checks wheher the ditionary includes the word. 

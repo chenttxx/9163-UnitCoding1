@@ -109,22 +109,16 @@ bool load_dictionary(const char* dictionary_file, hashmap_t hashtable[]){
         //newNode->next = NULL;
         strcpy(newNode->word, line);
         if(hashtable[hashValue] != NULL){
-             count++;
+             //count++;
              newNode->next = hashtable[hashValue];
              hashtable[hashValue] = newNode;
         }else{
         newNode->next = NULL;
         hashtable[hashValue] = newNode;
         //newNode = newNode->next;
-        count2++;
+        //count2++;
 
        }
-    }
-    hashmap_t temporary;
-    while(newNode != NULL){
-        temporary = newNode;
-        newNode = newNode->next;
-        free(temporary);
     }
 
     free(line);
@@ -239,7 +233,7 @@ int check_words(FILE* fp, hashmap_t hashtable[], char* misspelled[]) {
             }
         }
     }
-    free(tem);
+    free(string);
     free(word);
     return num_misspelled;
 }

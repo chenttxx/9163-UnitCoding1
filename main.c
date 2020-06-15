@@ -11,7 +11,7 @@ void free_memory(hashmap_t hashtable[], char* misspelled[])
 
     for (int i = 0; i < HASH_SIZE; i++)
     {
-        node* tem_node = hashtable[i];
+        node* temporary_node = hashtable[i];
 
         while (tem_node != NULL)
         {

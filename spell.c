@@ -75,8 +75,6 @@ bool load_dictionary(const char* dictionary_file, hashmap_t hashtable[]){
     size_t length = 0;
     ssize_t nextWordSize = -1;
     int hashValue = 0;
-int count = 0;
-int count2 = 0;
 
 
     for(int t = 0; t< HASH_SIZE; t++){
@@ -109,23 +107,15 @@ int count2 = 0;
         //newNode->next = NULL;
         strcpy(newNode->word, line);
         if(hashtable[hashValue] != NULL){
-             count++;
              newNode->next = hashtable[hashValue];
              hashtable[hashValue] = newNode;
         }else{
         newNode->next = NULL;
         hashtable[hashValue] = newNode;
         //newNode = newNode->next;
-        count2++;
 
        }
     }
-int count3 = 0;
-for(int s = 0; s <HASH_SIZE; s++){
-    if(hashtable[s]== NULL){
-        count3++;
-}
-}
     
     free(line);
     fclose(fp);

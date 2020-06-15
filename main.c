@@ -51,12 +51,12 @@ int main(int argc, char* argv[])
 
     FILE *fp = fopen(argv[2], "r");
     int num_misspelled = check_words(fp, hashtable, misspelled);
-    /*for (int i = 0; i < num_misspelled; i++) 
+    for (int i = 0; i < num_misspelled; i++) 
     {
        printf("Misspelled Word: %s\n", misspelled[i]);
     }
     printf("Misspelled Number: %d\n", num_misspelled);
-    for(int d = 0; d < HASH_SIZE; d++){
+    /*for(int d = 0; d < HASH_SIZE; d++){
         if(hashtable[d] != NULL){
             free(hashtable[d]);
         }

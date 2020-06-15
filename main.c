@@ -56,7 +56,7 @@ int main(int argc, char* argv[])
        printf("Misspelled Word: %s\n", misspelled[i]);
     }
     printf("Misspelled Number: %d\n", num_misspelled);
-    /*for(int d = 0; d < HASH_SIZE; d++){
+    for(int d = 0; d < HASH_SIZE; d++){
         if(hashtable[d] != NULL){
             free(hashtable[d]);
         }

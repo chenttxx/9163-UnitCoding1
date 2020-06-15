@@ -16,3 +16,4 @@ for
 homework
 assignment
 checks
+thisisnotaword

@@ -3,20 +3,23 @@
 #include "dictionary.h"
 
 
-void cleanup_mem(hashmap_t hashtable[], char* misspelled[])
+void free_memory(hashmap_t hashtable[], char* misspelled[])
 {
-    for (int i = 0; i < MAX_MISSPELLED; i++) free(misspelled[i]);
-
+    for (int i = 0; i < MAX_MISSPELLED; i++){
+        free(misspelled[i]);
+    }
 
     for (int i = 0; i < HASH_SIZE; i++)
     {
-        node* check_node = hashtable[i];
+        node* tem_node = hashtable[i];
 
-        while (check_node != NULL)
+        while (tem_node != NULL)
         {
-            node* node_to_free = check_node;
-            check_node = check_node->next;
-            if (node_to_free != NULL) free(node_to_free);
+            node* freenode = temporary_node;
+            temporary_node = temporary_node->next;
+            if (freenode != NULL){
+                free(freenode);
+            }
         }
     }
 
@@ -53,14 +56,14 @@ int main(int argc, char* argv[])
        printf("misspelled: %s\n", misspelled[i]);
     }
     printf("Mispelled: %d\n", num_misspelled);
-    for(int d = 0; d < HASH_SIZE; d++){
+    /*for(int d = 0; d < HASH_SIZE; d++){
         if(hashtable[d] != NULL){
             free(hashtable[d]);
         }
-    }
+    }*/
     fclose(fp);
 
-    cleanup_mem(hashtable, misspelled);
+    free_memory(hashtable, misspelled);
 
     return 0;
 }

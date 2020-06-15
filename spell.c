@@ -148,6 +148,7 @@ int check_words(FILE* fp, hashmap_t hashtable[], char* misspelled[]) {
     char *string = NULL;
     char *word = NULL;
     char *tem = malloc(sizeof(char) * (LENGTH + 1));
+    tem = NULL;
     size_t string_length = 0;
     ssize_t wordNum = -1;
     char delim[] = " ";

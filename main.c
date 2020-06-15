@@ -13,7 +13,7 @@ void free_memory(hashmap_t hashtable[], char* misspelled[])
     {
         node* temporary_node = hashtable[i];
 
-        while (tem_node != NULL)
+        while (temporary_node != NULL)
         {
             node* freenode = temporary_node;
             temporary_node = temporary_node->next;

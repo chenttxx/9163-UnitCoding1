@@ -228,10 +228,9 @@ int check_words(FILE* fp, hashmap_t hashtable[], char* misspelled[]) {
                     }
                 }
                 word = strtok(NULL, delim);
-            }
+            }free(tem);
         }
     }
-    free(tem);
     free(word);
     return num_misspelled;
 }

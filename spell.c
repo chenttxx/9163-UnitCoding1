@@ -229,6 +229,7 @@ int check_words(FILE* fp, hashmap_t hashtable[], char* misspelled[]) {
                 }
                 word = strtok(NULL, delim);
             }
+            free(tem);
         }
     }
     free(word);

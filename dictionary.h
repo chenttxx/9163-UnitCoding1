@@ -18,7 +18,7 @@
 
 #define HASH_SIZE 2000
 
-#define MAX_MISSPELLED 1000
+#define MAX_MISSPELLED 2
 
 typedef struct node
 {

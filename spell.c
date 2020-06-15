@@ -147,6 +147,7 @@ int check_words(FILE* fp, hashmap_t hashtable[], char* misspelled[]) {
     int num_misspelled = 0;
     char *string = NULL;
     char *word = NULL;
+    char *tem = malloc(sizeof(char) * (LENGTH + 1));
     size_t string_length = 0;
     ssize_t wordNum = -1;
     char delim[] = " ";
@@ -172,7 +173,7 @@ int check_words(FILE* fp, hashmap_t hashtable[], char* misspelled[]) {
 
             //remove punctuations in word into tem for comparison
             //the code is adjusted from stack overflow
-            char *tem = malloc(sizeof(char) * (LENGTH + 1));
+            
             int aux = 0;
             int temLen = 0;
             int dot = 0;
@@ -229,6 +230,7 @@ int check_words(FILE* fp, hashmap_t hashtable[], char* misspelled[]) {
             }
         }
     }
+    free(tem);
     free(word);
     return num_misspelled;
 }
